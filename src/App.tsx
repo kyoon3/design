@@ -4,6 +4,7 @@ import './App.css';
 import {FriedChicken} from "./startegy/FriedChicken";
 import {PourSauceBehavior} from "./startegy/PourSauceBehavior";
 import {BakedCookBehavior} from "./startegy/BakedCookBehavior";
+import {Chicken} from "./startegy/Chicken";
 
 function App() {
   const friedChicken = new FriedChicken();
@@ -11,15 +12,13 @@ function App() {
     console.log(friedChicken.performCook());
     console.log(friedChicken.performSauce());
     friedChicken.display();
-    const sauceBakedChicken = new FriedChicken();
-    sauceBakedChicken.setSauceBehavior(new PourSauceBehavior());
-    sauceBakedChicken.setCookBehavior(new BakedCookBehavior())
+    const sauceBakedChicken = new Chicken(new BakedCookBehavior(), new PourSauceBehavior());
     console.log(sauceBakedChicken.performCook());
     console.log(sauceBakedChicken.performSauce());
   }
   return (
     <div className="App">
-      <button  children={"click me"} onClick={() => test()}/>
+      <button children={"click me"} onClick={() => test()}/>
     </div>
   );
 }
