@@ -1,8 +1,7 @@
-import {ChickenBehavior} from "./ChickenBehavior";
 import {CookBehavior} from "./CookBehavior";
 import {SauceBehavior} from "./SauceBehavior";
 
-export abstract class Chicken {
+export class Chicken {
     cookBehavior: CookBehavior;
     sauceBehavior: SauceBehavior;
 
